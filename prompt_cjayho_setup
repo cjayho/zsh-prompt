@@ -1,0 +1,38 @@
+# CJAYHO prompt theme
+
+prompt_cjayho_help () {
+  cat <<EOH
+
+EOH
+}
+
+prompt_cjayho_setup () {
+  local color_userhost=${1:-'red'}
+  local cwd=${2:-'green'}
+  local prompt_end=${3:-'$'}
+
+  local -a schars
+  autoload -Uz prompt_special_chars
+  prompt_special_chars
+
+  local COLOR1="%B%F{$color_userhost}%k"
+  local COLOR2="%B%F{$cwd}%k"
+  local COLOR3="%b%f%k"
+
+  PS1='['$COLOR1'%n@%m'$COLOR2\ '%~'$COLOR3']'$prompt_end' '
+  PS2='> '
+
+  prompt_opts=(cr subst percent)
+}
+
+prompt_cjayho_preview () {
+  if (( ! $#* )); then
+    prompt_preview_theme cjayho
+    print
+    prompt_preview_theme cjayho red green '#'
+  else
+    prompt_preview_theme cjayho "$@"
+  fi
+}
+
+prompt_cjayho_setup "$@"
