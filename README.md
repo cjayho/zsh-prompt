@@ -1,3 +1,5 @@
+![screenshot](/screenshot.png?raw=true)
+
 # zsh-prompt
 bash-like color prompt for FreeBSD zsh
 
