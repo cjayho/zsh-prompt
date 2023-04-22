@@ -14,6 +14,7 @@ SAVEHIST=1000
 [[ -n "${key[Right]}"    ]]  && bindkey  "${key[Right]}"    forward-char
 [[ -n "${key[PageUp]}"   ]]  && bindkey  "${key[PageUp]}"   beginning-of-buffer-or-history
 [[ -n "${key[PageDown]}" ]]  && bindkey  "${key[PageDown]}" end-of-buffer-or-history
+[[ -n "${key[Backspace]}" ]] && bindkey  "${key[Backspace]}"  backward-delete-char
 
 autoload -Uz compinit promptinit colors
 compinit
