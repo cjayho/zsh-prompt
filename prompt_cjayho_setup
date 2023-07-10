@@ -22,7 +22,7 @@ prompt_cjayho_setup () {
   PS1='['$COLOR1'%n@%m'$COLOR2\ '%~'$COLOR3']'$prompt_end' '
   PS2='> '
 
-  prompt_opts=(cr subst percent)
+  prompt_opts=(subst percent)
 }
 
 prompt_cjayho_preview () {
